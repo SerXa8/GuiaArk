@@ -3,423 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guía Alpha Avanzada - Fjordur | ARK Survival Evolved</title>
-  <meta name="description" content="Guía avanzada para dominar el servidor Fjordur en ARK Survival Evolved. Estrategias, dinos meta, ubicaciones, construcción, PvP, tameo, farming y más." />
-  <meta name="keywords" content="ARK, Fjordur, guía, dinos, tameo, PvP, farming, construcción, supervivencia" />
-  <meta name="author" content="Tu Nombre o Nick" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="icon" href="favicon.ico" />
+  <title>Guía Alpha Avanzada - Fjordur</title>
+  <meta name="description" content="Guía avanzada para dominar Fjordur en ARK." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* === Styles unchanged, just minutely improved for accessibility and consistency === */
-    body {
-      font-family: "Roboto", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
-      color: #eee;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+    :root {
+      --primary: #4caf50;
+      --accent: #ffcc00;
+      --bg: #0f0f0f;
+      --bg-dark: #1c1c1c;
+      --bg-light: #222;
+      --text: #eee;
+      --muted: #aaa;
+      --border: #444;
     }
+
+    body.light {
+      --bg: #f4f4f4;
+      --bg-dark: #fff;
+      --bg-light: #ddd;
+      --text: #111;
+      --muted: #444;
+      --border: #ccc;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, var(--bg), var(--bg-dark));
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
     header {
       background-color: #111;
-      padding: 40px 20px;
+      padding: 50px 20px 30px;
       text-align: center;
-      border-bottom: 2px solid #4caf50;
+      border-bottom: 2px solid var(--primary);
     }
+
     header h1 {
-      font-family: "Orbitron", sans-serif;
-      font-size: 2.5rem;
-      color: #4caf50;
-      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      color: var(--primary);
     }
+
     header p {
       font-size: 1.2rem;
-      color: #aaa;
-      margin-top: 8px;
+      color: var(--muted);
+      margin-top: 10px;
     }
+
     nav {
-      background: #222;
+      background: var(--bg-light);
       padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 2px solid #4caf50;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
+      border-bottom: 2px solid var(--primary);
     }
+
     nav a {
-      color: #4caf50;
+      color: var(--primary);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 5px 10px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
     }
-    nav a:hover,
-    nav a:focus {
-      text-decoration: underline;
+
+    nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: var(--bg-light);
+    }
+
+    .controls button, .controls select {
+      padding: 8px 12px;
+      background: var(--primary);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .controls button:hover, .controls select:hover {
       background-color: #3a9b3a;
-      color: #fff;
-      outline: none;
     }
+
     section {
-      padding: 30px 20px;
+      padding: 40px 20px;
       max-width: 900px;
       margin: auto;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid var(--border);
     }
+
     h2 {
-      color: #ffcc00;
-      border-bottom: 1px solid #444;
-      padding-bottom: 5px;
-      margin-top: 0;
-      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
     }
-    ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
-      padding-left: 0;
-      list-style-type: disc;
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-top: 30px;
     }
-    li {
-      margin-bottom: 8px;
-    }
-    .tip {
-      background-color: #222;
-      padding: 15px;
-      border-left: 4px solid #4caf50;
-      margin: 20px 0;
-      font-style: italic;
-    }
+
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       background-color: #111;
-      color: #777;
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
-    strong {
-      color: #4caf50;
-      font-weight: 700;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #1c1c1c;
-      margin: 20px 0;
-    }
-    table, th, td {
-      border: 1px solid #444;
-      color: #eee;
-    }
-    th {
-      background-color: #333;
-      color: #ffcc00;
-      padding: 10px;
-      text-align: left;
-      font-weight: 700;
-    }
-    td {
-      padding: 8px;
-      vertical-align: middle;
-    }
-    img.dino-icon {
-      height: 50px;
-      vertical-align: middle;
-      margin-right: 10px;
-      border-radius: 5px;
-      border: 1px solid #444;
-    }
-    .map-img {
-      max-width: 100%;
-      margin: 20px 0;
-      border: 1px solid #444;
-      border-radius: 5px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    /* Calculator */
-    .calc-container {
-      background-color: #222;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 400px;
-      margin: 20px auto;
-      color: #eee;
-      box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-    }
-    .calc-container label, .calc-container input, .calc-container select {
-      display: block;
-      width: 100%;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-    .calc-container input, .calc-container select {
-      padding: 8px;
-      border: 1px solid #444;
-      border-radius: 4px;
-      background-color: #111;
-      color: #eee;
-      transition: border-color 0.3s ease;
-    }
-    .calc-container input:focus, .calc-container select:focus {
-      outline: none;
-      border-color: #4caf50;
-      box-shadow: 0 0 5px #4caf50;
-    }
-    .calc-container button {
-      padding: 10px 15px;
-      background-color: #4caf50;
-      border: none;
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    .calc-container button:hover,
-    .calc-container button:focus {
-      background-color: #3a9b3a;
-      outline: none;
-    }
-    .result {
-      margin-top: 15px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #ffcc00;
-      text-align: center;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Guía Alpha Avanzada - Fjordur (ARK: Survival Evolved)</h1>
-    <p>Domina el servidor rápido con estrategias y builds meta</p>
+    <h1 data-i18n="title">Guía Alpha Avanzada - Fjordur</h1>
+    <p data-i18n="subtitle">Domina el servidor rápido con estrategias y builds meta</p>
   </header>
 
-  <nav aria-label="Menú principal de navegación">
-    <a href="#primeros-pasos">Primeros Pasos</a>
-    <a href="#dinos-meta">Dinos Meta</a>
-    <a href="#ubicaciones-clave">Ubicaciones Clave</a>
-    <a href="#construccion">Construcción Avanzada</a>
-    <a href="#pvp">Estrategias PvP</a>
-    <a href="#tameo">Tameo Rápido</a>
-    <a href="#farming">Farming Optimizado</a>
-    <a href="#cuevas">Exploración y Cuevas</a>
-    <a href="#consejos">Consejos Extras</a>
+  <div class="controls">
+    <button id="toggle-theme" data-i18n="toggleTheme">Modo Claro</button>
+    <select id="language-select">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <nav>
+    <a href="#primeros-pasos" data-i18n="nav.steps">Primeros Pasos</a>
+    <a href="#dinos-meta" data-i18n="nav.meta">Dinos Meta</a>
+    <a href="#ubicaciones-clave" data-i18n="nav.locations">Ubicaciones</a>
+    <a href="#construccion" data-i18n="nav.build">Construcción</a>
+    <a href="#pvp" data-i18n="nav.pvp">PvP</a>
+    <a href="#tameo" data-i18n="nav.tame">Tameo</a>
+    <a href="#farming" data-i18n="nav.farm">Farming</a>
+    <a href="#cuevas" data-i18n="nav.caves">Cuevas</a>
+    <a href="#consejos" data-i18n="nav.tips">Consejos</a>
   </nav>
 
-  <section id="primeros-pasos">
-    <h2>1. Primeros pasos estratégicos</h2>
-    <ul>
-      <li><strong>Prioriza el desbloqueo de Engramas Tech y Kibble:</strong> Esenciales para acelerar progreso y tameos.</li>
-      <li><strong>Ubicación inicial:</strong> Cerca de agua, metal ligero, y madera; evita zonas PvP densas.</li>
-      <li><strong>Recolecta rápido:</strong> Usa Castoroides y Doedicurus lo antes posible para madera y piedra.</li>
-      <li><strong>Taming eficiente:</strong> Rifles tranquilizantes y Kibble para minimizar riesgo y acelerar tameo.</li>
-    </ul>
+  <section>
+    <h2 data-i18n="section.intro">Bienvenido a la guía avanzada de ARK Fjordur</h2>
+    <p data-i18n="section.desc">Aquí aprenderás a optimizar tu progreso, dominar el PvP, tamear los mejores dinos y mucho más.</p>
   </section>
 
-  <section id="dinos-meta">
-    <h2>2. Dinos Meta y su función</h2>
-    <table>
-      <thead>
-        <tr><th>Dino</th><th>Función</th><th>Imagen</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Argentavis</strong></td>
-          <td>Transporte aéreo, scout y soporte raid</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/0/09/Argentavis_-_ARK.png" alt="Argentavis" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Magmasaur</strong></td>
-          <td>Farmear metal, fuego repelente para enemigos</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/5/5d/Magmasaur_ARK.png" alt="Magmasaur" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Doedicurus</strong></td>
-          <td>Recolectar piedra rápida y tanque defensa base</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/3/37/Doedicurus_ARK.png" alt="Doedicurus" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Shadowmane</strong></td>
-          <td>PvP dominante: movilidad, invisibilidad, daño</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/7/77/Shadowmane_ARK.png" alt="Shadowmane" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Therizinosaur</strong></td>
-          <td>Multiuso: farmear materiales y combate</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/d/df/Therizinosaur_ARK.png" alt="Therizinosaur" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Castoroides</strong></td>
-          <td>Madera abundante y defensa fluvial</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/f/fb/Castoroides_ARK.png" alt="Castoroides" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Giganotosaurus</strong></td>
-          <td>Poder destructivo máximo para raids</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/3/35/Giganotosaurus_ARK.png" alt="Giganotosaurus" class="dino-icon" /></td>
-        </tr>
-        <tr>
-          <td><strong>Glowtail</strong></td>
-          <td>Exploración nocturna y en cuevas</td>
-          <td><img src="https://static.wikia.nocookie.net/ark-survival-evolved/images/b/bd/Glowtail_ARK.png" alt="Glowtail" class="dino-icon" /></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <footer>
+    &copy; 2025 - ARK Fjordur Pro Guide
+  </footer>
 
-  <section id="ubicaciones-clave">
- <section id="mapa-y-zonas">
-  <h2>3.1 Mapa y zonas clave para farmear y bases</h2>
-  <p>Conoce las mejores ubicaciones del mapa Fjordur para recolectar recursos esenciales y establecer bases estratégicas que te den ventaja en PvP y PvE.</p>
-  
-  <img
-    src="https://staticg.sportskeeda.com/editor/2022/08/bbcab-16615782186641-1920.jpg?w=1460"
-    alt="Mapa de Fjordur con zonas para farmear y bases"
-    class="map-img"
-  />
-  
-  <h3>Zonas para farmear recursos</h3>
-  <ul>
-    <li><strong>Metal:</strong> Montañas al noreste, volcanes cercanos a Vanaheim. Ideal para farmear con Magmasaur o T-Rex.</li>
-    <li><strong>Piedra:</strong> Ríos y colinas en Midgard, zonas cercanas a los lagos centrales con Doedicurus.</li>
-    <li><strong>Madera:</strong> Bosques densos de Redwood en el suroeste y norte, con Castoroides o Therizinosaur para farmear rápido.</li>
-    <li><strong>Oil:</strong> Fondos marinos en las zonas congeladas y costas del sur. Usa dinos acuáticos fuertes como Megalodon o Tusoteuthis.</li>
-    <li><strong>Elementos raros:</strong> Cuevas profundas y volcanes activos para conseguir cristales y rarezas con Glowtail y Gacha.</li>
-  </ul>
-  
-  <h3>Zonas recomendadas para bases</h3>
-  <ul>
-    <li><strong>Plataformas Redwood:</strong> Excelente para bases arbóreas con buena visibilidad y defensa natural.</li>
-    <li><strong>Montañas aisladas:</strong> Sitios difíciles de acceder para enemigos, perfectos para bases Tech defensivas.</li>
-    <li><strong>Cuevas protegidas:</strong> Bases ocultas ideales para almacenar loot valioso y proteger recursos clave.</li>
-    <li><strong>Islas apartadas:</strong> Perfectas para criaderos, almacenamiento seguro y reducción de ataques PvP.</li>
-    <li><strong>Áreas cercanas a recursos:</strong> Siempre prioriza ubicaciones que te permitan farmear rápido sin grandes desplazamientos.</li>
-  </ul>
-</section>
+  <script>
+    // DARK MODE
+    const themeBtn = document.getElementById('toggle-theme');
+    const currentTheme = localStorage.getItem('theme');
 
+    function setTheme(mode) {
+      if (mode === 'light') {
+        document.body.classList.add('light');
+        themeBtn.textContent = translations[currentLang]['toggleThemeDark'];
+      } else {
+        document.body.classList.remove('light');
+        themeBtn.textContent = translations[currentLang]['toggleTheme'];
+      }
+      localStorage.setItem('theme', mode);
+    }
 
-  <section id="construccion">
-    <h2>4. Construcción avanzada de bases</h2>
-    <ul>
-      <li><strong>Base Tech:</strong> Muros dobles, techos dobles, torretas en todas las entradas y puntos vulnerables.</li>
-      <li><strong>Defensa escalonada:</strong> Spike walls, plantas X, torretas automáticas, y dinos guardianes.</li>
-      <li><strong>Ubicación estratégica:</strong> Bases elevadas o dentro de cuevas para ventaja táctica.</li>
-      <li><strong>Almacenamiento dividido:</strong> Divide loot clave en cofres separados para minimizar pérdidas.</li>
-      <li><strong>Uso intensivo de Cryopods:</strong> Mantén dinos valiosos para raids y defensa listos para desplegar.</li>
-    </ul>
-  </section>
+    themeBtn.addEventListener('click', () => {
+      const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
 
-  <section id="pvp">
-    <h2>5. Estrategias PvP avanzadas</h2>
-    <ul>
-      <li><strong>Raideos nocturnos:</strong> Usa Ghillie, Shadowmane y dinos veloces para ataques sorpresa.</li>
-      <li><strong>Distracciones y señuelos:</strong> Dinos pequeños para distraer torretas y limpiar trampas.</li>
-      <li><strong>Control del mapa:</strong> Domina puntos clave para asegurar recursos y bases enemigas.</li>
-      <li><strong>Coordinación en equipo:</strong> Roles claros: scout, tanque, sniper y healer.</li>
-      <li><strong>Runas y artefactos:</strong> Usa buffs para raid y defensa, maximizando tus chances.</li>
-    </ul>
-  </section>
+    if (currentTheme === 'light') setTheme('light');
 
-  <section id="tameo">
-    <h2>6. Tameo rápido y eficiente</h2>
-    <ul>
-      <li>Rifles tranquilizantes con dardos narcóticos o tranqulizantes para minimizar riesgos.</li>
-      <li>Kibble especializado para cada especie para acelerar el tameo.</li>
-      <li>Trampas de piedra para tameos seguros de dinos agresivos (Argentavis, Rex).</li>
-      <li>Dinos protectores como Therizinosaur durante tameos difíciles.</li>
-    </ul>
-  </section>
+    // LANGUAGE SWITCH
+    const translations = {
+      es: {
+        title: "Guía Alpha Avanzada - Fjordur",
+        subtitle: "Domina el servidor rápido con estrategias y builds meta",
+        toggleTheme: "Modo Claro",
+        toggleThemeDark: "Modo Oscuro",
+        nav: {
+          steps: "Primeros Pasos",
+          meta: "Dinos Meta",
+          locations: "Ubicaciones",
+          build: "Construcción",
+          pvp: "PvP",
+          tame: "Tameo",
+          farm: "Farming",
+          caves: "Cuevas",
+          tips: "Consejos"
+        },
+        section: {
+          intro: "Bienvenido a la guía avanzada de ARK Fjordur",
+          desc: "Aquí aprenderás a optimizar tu progreso, dominar el PvP, tamear los mejores dinos y mucho más."
+        }
+      },
+      en: {
+        title: "Advanced Alpha Guide - Fjordur",
+        subtitle: "Dominate the server fast with meta strategies and builds",
+        toggleTheme: "Light Mode",
+        toggleThemeDark: "Dark Mode",
+        nav: {
+          steps: "Getting Started",
+          meta: "Meta Dinos",
+          locations: "Locations",
+          build: "Building",
+          pvp: "PvP",
+          tame: "Taming",
+          farm: "Farming",
+          caves: "Caves",
+          tips: "Tips"
+        },
+        section: {
+          intro: "Welcome to the Advanced ARK Fjordur Guide",
+          desc: "Here you'll learn how to optimize progress, dominate PvP, tame top dinos, and more."
+        }
+      }
+    };
 
-  <section id="farming">
-    <h2>7. Farming optimizado</h2>
-    <ul>
-      <li><strong>Metal:</strong> Magmasaur con set minería para producción máxima.</li>
-      <li><strong>Madera:</strong> Castoroides y Therizinosaur para grandes cantidades.</li>
-      <li><strong>Piedra:</strong> Doedicurus es el mejor recolector.</li>
-      <li><strong>Oil:</strong> Dinos acuáticos como Tusoteuthis o Megalodon para farmear seguro.</li>
-      <li><strong>Recursos raros:</strong> Usa gachas personalizadas en zonas seguras para loot extra.</li>
-    </ul>
-    
-      <section id="cuevas">
-    <h2>8. Exploración y uso de cuevas</h2>
-    <ul>
-      <li>Prepárate con armas, armadura y alimentos adecuados antes de entrar.</li>
-      <li>Usa dinos resistentes y con buena movilidad para explorar rápidamente.</li>
-      <li>Glowtail es esencial para iluminación natural dentro de las cuevas.</li>
-      <li>Evita cuevas muy profundas si no tienes experiencia o dinos fuertes.</li>
-      <li>Las cuevas esconden loot valioso y artefactos para desbloquear Engramas.</li>
-    </ul>
-  </section>
+    const languageSelect = document.getElementById('language-select');
+    let currentLang = localStorage.getItem('lang') || 'es';
 
-  <section id="consejos">
-    <h2>9. Consejos extras para dominar Fjordur</h2>
-    <ul>
-      <li>Comunícate constantemente con tu equipo para evitar sorpresas PvP.</li>
-      <li>Recuerda usar las herramientas de construcción rápida para ahorrar tiempo.</li>
-      <li>Prioriza proteger tus dinos con Cryopods durante raids enemigos.</li>
-      <li>Realiza scouting frecuente para anticipar movimientos enemigos.</li>
-      <li>Optimiza el peso cargado en dinos para viajes más eficientes.</li>
-    </ul>
-  </section>
+    function updateTexts(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const keys = el.getAttribute('data-i18n').split('.');
+        let text = translations[lang];
+        keys.forEach(k => text = text[k]);
+        el.textContent = text;
+      });
 
-  <section id="crianza-mutaciones">
-  <h2>10. Crianza y mutaciones de estadísticas</h2>
-  <ul>
-    <li><strong>¿Por qué criar dinos?</strong> Para mejorar estadísticas base, obtener mejores genes y crear dinos más fuertes para combate, farm o PvP.</li>
-    <li><strong>Proceso de crianza:</strong> 
-      <ul>
-        <li>Empareja dos dinos compatibles (misma especie y género opuesto).</li>
-        <li>Coloca una incubadora cerca con huevos fertilizados para que eclosionen.</li>
-        <li>Cuida y alimenta al bebé hasta que crezca; durante este proceso, heredará estadísticas de sus padres.</li>
-      </ul>
-    </li>
-    <li><strong>Mutaciones de estadísticas:</strong> 
-      <ul>
-        <li>Cada vez que nace un bebé, tiene una pequeña probabilidad de mutar una o más estadísticas, incrementándolas.</li>
-        <li>Las mutaciones se reflejan en barras adicionales en las estadísticas del dino (verás los "mut" o +1, +2, etc.).</li>
-        <li>Las mutaciones aumentan la salud, daño, resistencia, etc., haciendo al dino más poderoso.</li>
-        <li>Para maximizar mutaciones, cría dinos con estadísticas ya altas y usa un sistema de crianza para seleccionar mutaciones acumulativas.</li>
-      </ul>
-    </li>
-    <li><strong>Consejos para crianza eficiente:</strong>
-      <ul>
-        <li>Usa dinos con buenas estadísticas base para empezar.</li>
-        <li>Cría consistentemente para aumentar las mutaciones con cada generación.</li>
-        <li>Almacena los mejores dinos y desecha los que no tengan mutaciones interesantes.</li>
-        <li>Considera usar mods o servidores que mejoren el sistema de crianza si quieres acelerar el proceso.</li>
-      </ul>
-    </li>
-  </ul>
-  <div class="tip">
-    <strong>Tip:</strong> Llevar un registro de las mutaciones y usar nombres para identificar líneas de crianza ayuda a mantener control y mejorar más rápido.
-  </div>
-</section>
+      themeBtn.textContent = document.body.classList.contains('light')
+        ? translations[lang]['toggleThemeDark']
+        : translations[lang]['toggleTheme'];
+    }
 
-  
+    languageSelect.value = currentLang;
+    updateTexts(currentLang);
+
+    languageSelect.addEventListener('change', () => {
+      currentLang = languageSelect.value;
+      localStorage.setItem('lang', currentLang);
+      updateTexts(currentLang);
+    });
+  </script>
 </body>
 </html>
-
-     

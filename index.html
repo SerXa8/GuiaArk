@@ -188,6 +188,9 @@
       padding: 10px 20px;
       background-color: var(--bg-alt);
       gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 110;
     }
 
     .control-buttons button {
@@ -224,7 +227,7 @@
 <body>
   <div class="control-buttons">
     <button id="theme-toggle">Cambiar Tema</button>
-    <button id="lang-toggle">Change Language</button>
+    <button id="lang-toggle">Cambiar Idioma</button>
   </div>
 
   <header>
@@ -244,7 +247,121 @@
     <a href="#consejos">Consejos Extras</a>
   </nav>
 
-  <!-- Aquí iría el resto de tus <section> ya existentes... -->
+  <section id="primeros-pasos">
+    <h2>Primeros Pasos</h2>
+    <ul>
+      <li><strong>Elige la zona ideal:</strong> Las playas del norte son menos PvP y con recursos fáciles.</li>
+      <li><strong>Consigue un parasaur rápido:</strong> Fundamental para explorar y farmear temprano.</li>
+      <li><strong>Construcción inicial segura:</strong> Construye en alturas o lugares protegidos para evitar raids.</li>
+      <li><strong>Farmear madera y piedra:</strong> Usa el pico y hacha, y considera un dilo para farmear más rápido.</li>
+    </ul>
+  </section>
+
+  <section id="dinos-meta">
+    <h2>Dinos Meta</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dino</th>
+          <th>Uso</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="https://i.imgur.com/7H8QbRs.png" alt="Parasar" class="dino-icon" />Parasaur</td>
+          <td>Scout rápido y para primeros combates</td>
+          <td>Útil para exploración y escapatorias tempranas</td>
+        </tr>
+        <tr>
+          <td><img src="https://i.imgur.com/2VxHMEW.png" alt="Raptor" class="dino-icon" />Raptor</td>
+          <td>Combate rápido y caza</td>
+          <td>Excelente para PvP inicial</td>
+        </tr>
+        <tr>
+          <td><img src="https://i.imgur.com/NhKRqEi.png" alt="Therizino" class="dino-icon" />Therizino</td>
+          <td>Farmeo versátil y combate</td>
+          <td>Muy útil para recolectar madera, fibra y carne</td>
+        </tr>
+        <tr>
+          <td><img src="https://i.imgur.com/xb6Zy4S.png" alt="Tapejara" class="dino-icon" />Tapejara</td>
+          <td>Movilidad aérea</td>
+          <td>Ideal para explorar y transportar</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="ubicaciones-clave">
+    <h2>Ubicaciones Clave</h2>
+    <ul>
+      <li><strong>La montaña helada:</strong> Rico en metal y obsidiana, ideal para construir bases fuertes.</li>
+      <li><strong>La cueva del dragón:</strong> Contiene artefactos y tesoros para subir nivel.</li>
+      <li><strong>Los bosques densos:</strong> Fibra y madera abundante, con peligro moderado.</li>
+      <li><strong>La zona costera este:</strong> Ideal para pesca y criaderos de dinos acuáticos.</li>
+    </ul>
+    <img src="https://i.imgur.com/1vx8R7c.jpg" alt="Mapa del servidor Fjordur" class="map-img" />
+  </section>
+
+  <section id="construccion">
+    <h2>Construcción Avanzada</h2>
+    <ul>
+      <li><strong>Plataformas elevadas:</strong> Evitan ataques terrestres y ofrecen buena visión.</li>
+      <li><strong>Muros dobles y techos reforzados:</strong> Añade capas para mayor defensa.</li>
+      <li><strong>Talleres y almacenes organizados:</strong> Facilita la producción y gestión de recursos.</li>
+      <li><strong>Torretas y trampas:</strong> Automatiza la defensa para cuando no estés.</li>
+    </ul>
+  </section>
+
+  <section id="pvp">
+    <h2>Estrategias PvP</h2>
+    <ul>
+      <li><strong>Exploración constante:</strong> Conoce la base enemiga y sus horarios.</li>
+      <li><strong>Raid coordinado:</strong> Usa dinos fuertes y coordina ataques con aliados.</li>
+      <li><strong>Utiliza el sigilo:</strong> Los Parasaur y Raptors para incursiones rápidas.</li>
+      <li><strong>Defensa inteligente:</strong> Usa torretas y puntos ciegos para sorprender.</li>
+    </ul>
+  </section>
+
+  <section id="tameo">
+    <h2>Tameo Rápido</h2>
+    <ul>
+      <li><strong>Preparación:</strong> Lleva Narcóticos y comida favorita del dino.</li>
+      <li><strong>Trampas simples:</strong> Usa plataformas elevadas y obstáculos para contener.</li>
+      <li><strong>Alianzas:</strong> Tamear en grupo acelera el proceso y ofrece protección.</li>
+      <li><strong>Especial atención al Therizino:</strong> Prioriza su tameo para farming eficiente.</li>
+    </ul>
+  </section>
+
+  <section id="farming">
+    <h2>Farming Optimizado</h2>
+    <ul>
+      <li><strong>Rutas fijas:</strong> Define zonas para recoger recursos sin perder tiempo.</li>
+      <li><strong>Dinos especializados:</strong> Usa Beelzebufo para fibra, Ankylos para metal.</li>
+      <li><strong>Auto-recolección:</strong> Usa dinos para minimizar viajes y maximizar farm.</li>
+      <li><strong>Almacenes cercanos:</strong> Evita perder tiempo guardando recursos.</li>
+    </ul>
+  </section>
+
+  <section id="cuevas">
+    <h2>Exploración y Cuevas</h2>
+    <ul>
+      <li><strong>Equipamiento esencial:</strong> Antorchas, armadura resistente y dino fuerte.</li>
+      <li><strong>Evita ir solo:</strong> Explora con aliados para mayor seguridad.</li>
+      <li><strong>Objetivos claros:</strong> Busca artefactos y recursos raros.</li>
+      <li><strong>Conoce la cueva:</strong> Usa mapas o guías para evitar perderse.</li>
+    </ul>
+  </section>
+
+  <section id="consejos">
+    <h2>Consejos Extras</h2>
+    <ul>
+      <li><strong>Comunicación constante:</strong> Usa Discord o Teamspeak para coordinar con el equipo.</li>
+      <li><strong>Entrena tu base:</strong> Realiza simulacros para preparar ataques o defensas.</li>
+      <li><strong>Actualiza dinos y armas:</strong> Siempre mejora para mantener ventaja.</li>
+      <li><strong>Observa a la competencia:</strong> Aprende de otros jugadores y adapta estrategias.</li>
+    </ul>
+  </section>
 
   <footer>
     <p>&copy; 2025 Guía ARK Fjordur. Todos los derechos reservados.</p>
@@ -264,12 +381,17 @@
       localStorage.setItem("theme", newTheme);
     });
 
-    // Idioma (simulado)
+    // Idioma - aquí solo simulado el toggle del atributo lang (no cambia contenido)
     const langToggle = document.getElementById("lang-toggle");
     langToggle.addEventListener("click", () => {
       const currentLang = document.documentElement.lang;
-      document.documentElement.lang = currentLang === "es" ? "en" : "es";
-      alert("Idioma cambiado a: " + (document.documentElement.lang === "es" ? "Español" : "English"));
+      if(currentLang === "es") {
+        document.documentElement.lang = "en";
+        alert("Idioma cambiado a: English (contenido no traducido)");
+      } else {
+        document.documentElement.lang = "es";
+        alert("Idioma cambiado a: Español (contenido no traducido)");
+      }
     });
   </script>
 </body>

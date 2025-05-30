@@ -3,264 +3,273 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guía Alpha Avanzada - Fjordur</title>
-  <meta name="description" content="Guía avanzada para dominar Fjordur en ARK." />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Guía Alpha Avanzada - Fjordur | ARK Survival Evolved</title>
+  <meta name="description" content="Guía avanzada para dominar el servidor Fjordur en ARK Survival Evolved. Estrategias, dinos meta, ubicaciones, construcción, PvP, tameo, farming y más." />
+  <meta name="keywords" content="ARK, Fjordur, guía, dinos, tameo, PvP, farming, construcción, supervivencia" />
+  <meta name="author" content="Tu Nombre o Nick" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     :root {
-      --primary: #4caf50;
-      --accent: #ffcc00;
-      --bg: #0f0f0f;
-      --bg-dark: #1c1c1c;
-      --bg-light: #222;
-      --text: #eee;
-      --muted: #aaa;
-      --border: #444;
+      --bg-color: #0f0f0f;
+      --bg-alt: #1c1c1c;
+      --text-color: #eee;
+      --accent-color: #4caf50;
+      --border-color: #444;
+      --table-header: #333;
+      --highlight: #ffcc00;
     }
 
     body.light {
-      --bg: #f4f4f4;
-      --bg-dark: #fff;
-      --bg-light: #ddd;
-      --text: #111;
-      --muted: #444;
-      --border: #ccc;
+      --bg-color: #f2f2f2;
+      --bg-alt: #ffffff;
+      --text-color: #111;
+      --accent-color: #00796b;
+      --border-color: #ccc;
+      --table-header: #e0e0e0;
+      --highlight: #c62828;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       margin: 0;
-      background: linear-gradient(to right, var(--bg), var(--bg-dark));
-      color: var(--text);
+      padding: 0;
+      background: linear-gradient(to right, var(--bg-color), var(--bg-alt));
+      color: var(--text-color);
       line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #111;
-      padding: 50px 20px 30px;
+      background-color: var(--bg-color);
+      padding: 40px 20px;
       text-align: center;
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 2px solid var(--accent-color);
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.8rem;
-      color: var(--primary);
+      font-family: "Orbitron", sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin: 0;
     }
 
     header p {
       font-size: 1.2rem;
-      color: var(--muted);
-      margin-top: 10px;
+      color: #aaa;
+      margin-top: 8px;
     }
 
     nav {
-      background: var(--bg-light);
+      background: var(--bg-alt);
       padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 2px solid var(--accent-color);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      border-bottom: 2px solid var(--primary);
+      gap: 15px;
     }
 
     nav a {
-      color: var(--primary);
+      color: var(--accent-color);
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 5px 10px;
+      border-radius: 4px;
     }
 
-    nav a:hover {
-      background: var(--primary);
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+      background-color: var(--accent-color);
       color: white;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      padding: 15px;
-      background: var(--bg-light);
-    }
-
-    .controls button, .controls select {
-      padding: 8px 12px;
-      background: var(--primary);
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .controls button:hover, .controls select:hover {
-      background-color: #3a9b3a;
+      outline: none;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 30px 20px;
       max-width: 900px;
       margin: auto;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border-color);
     }
 
     h2 {
-      color: var(--accent);
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+      color: var(--highlight);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+      margin-top: 0;
+      font-weight: 700;
     }
 
-    h3 {
-      color: var(--primary);
-      font-size: 1.3rem;
-      margin-top: 30px;
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .tip {
+      background-color: var(--bg-alt);
+      padding: 15px;
+      border-left: 4px solid var(--accent-color);
+      margin: 20px 0;
+      font-style: italic;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background-color: #111;
-      color: var(--muted);
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    strong {
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--bg-alt);
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+    }
+
+    th {
+      background-color: var(--table-header);
+      color: var(--highlight);
+      padding: 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    td {
+      padding: 8px;
+      vertical-align: middle;
+    }
+
+    img.dino-icon {
+      height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+    }
+
+    .map-img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .control-buttons {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      background-color: var(--bg-alt);
+      gap: 10px;
+    }
+
+    .control-buttons button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .control-buttons button:hover {
+      background-color: #3a9b3a;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .control-buttons {
+        flex-direction: column;
+        align-items: flex-end;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1 data-i18n="title">Guía Alpha Avanzada - Fjordur</h1>
-    <p data-i18n="subtitle">Domina el servidor rápido con estrategias y builds meta</p>
-  </header>
-
-  <div class="controls">
-    <button id="toggle-theme" data-i18n="toggleTheme">Modo Claro</button>
-    <select id="language-select">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-    </select>
+  <div class="control-buttons">
+    <button id="theme-toggle">Cambiar Tema</button>
+    <button id="lang-toggle">Change Language</button>
   </div>
 
-  <nav>
-    <a href="#primeros-pasos" data-i18n="nav.steps">Primeros Pasos</a>
-    <a href="#dinos-meta" data-i18n="nav.meta">Dinos Meta</a>
-    <a href="#ubicaciones-clave" data-i18n="nav.locations">Ubicaciones</a>
-    <a href="#construccion" data-i18n="nav.build">Construcción</a>
-    <a href="#pvp" data-i18n="nav.pvp">PvP</a>
-    <a href="#tameo" data-i18n="nav.tame">Tameo</a>
-    <a href="#farming" data-i18n="nav.farm">Farming</a>
-    <a href="#cuevas" data-i18n="nav.caves">Cuevas</a>
-    <a href="#consejos" data-i18n="nav.tips">Consejos</a>
+  <header>
+    <h1>Guía Alpha Avanzada - Fjordur (ARK: Survival Evolved)</h1>
+    <p>Domina el servidor rápido con estrategias y builds meta</p>
+  </header>
+
+  <nav aria-label="Menú principal de navegación">
+    <a href="#primeros-pasos">Primeros Pasos</a>
+    <a href="#dinos-meta">Dinos Meta</a>
+    <a href="#ubicaciones-clave">Ubicaciones Clave</a>
+    <a href="#construccion">Construcción Avanzada</a>
+    <a href="#pvp">Estrategias PvP</a>
+    <a href="#tameo">Tameo Rápido</a>
+    <a href="#farming">Farming Optimizado</a>
+    <a href="#cuevas">Exploración y Cuevas</a>
+    <a href="#consejos">Consejos Extras</a>
   </nav>
 
-  <section>
-    <h2 data-i18n="section.intro">Bienvenido a la guía avanzada de ARK Fjordur</h2>
-    <p data-i18n="section.desc">Aquí aprenderás a optimizar tu progreso, dominar el PvP, tamear los mejores dinos y mucho más.</p>
-  </section>
+  <!-- Aquí iría el resto de tus <section> ya existentes... -->
 
   <footer>
-    &copy; 2025 - ARK Fjordur Pro Guide
+    <p>&copy; 2025 Guía ARK Fjordur. Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // DARK MODE
-    const themeBtn = document.getElementById('toggle-theme');
-    const currentTheme = localStorage.getItem('theme');
-
-    function setTheme(mode) {
-      if (mode === 'light') {
-        document.body.classList.add('light');
-        themeBtn.textContent = translations[currentLang]['toggleThemeDark'];
-      } else {
-        document.body.classList.remove('light');
-        themeBtn.textContent = translations[currentLang]['toggleTheme'];
-      }
-      localStorage.setItem('theme', mode);
+    // Tema claro/oscuro
+    const themeToggle = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "light") {
+      document.body.classList.add("light");
     }
 
-    themeBtn.addEventListener('click', () => {
-      const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
-      setTheme(newTheme);
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const newTheme = document.body.classList.contains("light") ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
     });
 
-    if (currentTheme === 'light') setTheme('light');
-
-    // LANGUAGE SWITCH
-    const translations = {
-      es: {
-        title: "Guía Alpha Avanzada - Fjordur",
-        subtitle: "Domina el servidor rápido con estrategias y builds meta",
-        toggleTheme: "Modo Claro",
-        toggleThemeDark: "Modo Oscuro",
-        nav: {
-          steps: "Primeros Pasos",
-          meta: "Dinos Meta",
-          locations: "Ubicaciones",
-          build: "Construcción",
-          pvp: "PvP",
-          tame: "Tameo",
-          farm: "Farming",
-          caves: "Cuevas",
-          tips: "Consejos"
-        },
-        section: {
-          intro: "Bienvenido a la guía avanzada de ARK Fjordur",
-          desc: "Aquí aprenderás a optimizar tu progreso, dominar el PvP, tamear los mejores dinos y mucho más."
-        }
-      },
-      en: {
-        title: "Advanced Alpha Guide - Fjordur",
-        subtitle: "Dominate the server fast with meta strategies and builds",
-        toggleTheme: "Light Mode",
-        toggleThemeDark: "Dark Mode",
-        nav: {
-          steps: "Getting Started",
-          meta: "Meta Dinos",
-          locations: "Locations",
-          build: "Building",
-          pvp: "PvP",
-          tame: "Taming",
-          farm: "Farming",
-          caves: "Caves",
-          tips: "Tips"
-        },
-        section: {
-          intro: "Welcome to the Advanced ARK Fjordur Guide",
-          desc: "Here you'll learn how to optimize progress, dominate PvP, tame top dinos, and more."
-        }
-      }
-    };
-
-    const languageSelect = document.getElementById('language-select');
-    let currentLang = localStorage.getItem('lang') || 'es';
-
-    function updateTexts(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const keys = el.getAttribute('data-i18n').split('.');
-        let text = translations[lang];
-        keys.forEach(k => text = text[k]);
-        el.textContent = text;
-      });
-
-      themeBtn.textContent = document.body.classList.contains('light')
-        ? translations[lang]['toggleThemeDark']
-        : translations[lang]['toggleTheme'];
-    }
-
-    languageSelect.value = currentLang;
-    updateTexts(currentLang);
-
-    languageSelect.addEventListener('change', () => {
-      currentLang = languageSelect.value;
-      localStorage.setItem('lang', currentLang);
-      updateTexts(currentLang);
+    // Idioma (simulado)
+    const langToggle = document.getElementById("lang-toggle");
+    langToggle.addEventListener("click", () => {
+      const currentLang = document.documentElement.lang;
+      document.documentElement.lang = currentLang === "es" ? "en" : "es";
+      alert("Idioma cambiado a: " + (document.documentElement.lang === "es" ? "Español" : "English"));
     });
   </script>
 </body>
